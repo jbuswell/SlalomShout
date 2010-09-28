@@ -7,7 +7,7 @@
 //
 
 #import "SlalomShoutAppDelegate.h"
-#import "JSON.h"
+#import "JSON/JSON.h"
 
 @implementation SlalomShoutAppDelegate
 
@@ -15,6 +15,7 @@
 @synthesize userName;
 @synthesize userNameField;
 @synthesize userNameLabel;
+@synthesize tabBarController;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -22,7 +23,34 @@
 - (IBAction)login:(id)sender {
 	self.userName = userNameField.text;
 	userNameLabel.text = self.userName;
+	
+	NSString *urlString = 
+	//[NSString stringWithFormat: @"http://www.edsiok.com/secure/test.json"];
+	[NSString stringWithFormat:@"http://kata.slalomdemo.com:60577/UserMessageService.asmx/PingDB"];
+	NSURL *url = [NSURL URLWithString:urlString];
+	NSString *authHeader = @"Basic d2VidXNlcjpQYXNzQHdvcmQh"; 
+	//NSString *authHeader = @"Basic dGVzdDp0ZXN0MTIz"; //ed's stupud server
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: url];
+	[request setHTTPMethod:@"POST"]; 
+	[request addValue:authHeader forHTTPHeaderField:@"Authorization"]; 
+	[request addValue:@"application/json" forHTTPHeaderField:@"Accept"]; 
+	[request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+	[connection release];
+	[request release];
+	
 	[window addSubview: [tabBarController view]];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data 
+{
+	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	NSLog(jsonString);
+	NSDictionary *results = [jsonString JSONValue];
+	//only for ed's server
+	//NSString *result = [results objectForKey:@"result"];
+	
+	//NSLog(result);
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {

@@ -13,6 +13,7 @@
 	IBOutlet UITabBarController *tabBarController;
 	IBOutlet UITextField *userNameField;
 	IBOutlet UILabel *userNameLabel;
+	NSMutableData *responseData;
 	NSString *userName;
 }
 
@@ -21,6 +22,7 @@
 @property (nonatomic, retain) IBOutlet UITextField *userNameField;
 @property (nonatomic, retain) IBOutlet UILabel *userNameLabel;
 @property (nonatomic, retain) NSString *userName;
+@property (nonatomic, retain) NSMutableData *responseData;
 
 - (IBAction)login:(id)sender; 
 
