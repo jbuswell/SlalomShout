@@ -12,14 +12,23 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		6B22F7DF124AB4FC00D68D31 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B22F7D6124AB4FC00D68D31 /* NSObject+SBJSON.m */; };
 		6B22F7E0124AB4FC00D68D31 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B22F7D8124AB4FC00D68D31 /* NSString+SBJSON.m */; };
 		6B22F7E1124AB4FC00D68D31 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B22F7DA124AB4FC00D68D31 /* SBJsonBase.m */; };
 		6B22F7E2124AB4FC00D68D31 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B22F7DC124AB4FC00D68D31 /* SBJsonParser.m */; };
 		6B22F7E3124AB4FC00D68D31 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B22F7DE124AB4FC00D68D31 /* SBJsonWriter.m */; };
-		6B74960C12440F6E00E57927 /* 66-microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B74960B12440F6E00E57927 /* 66-microphone.png */; };
-		6B74960E12440F9E00E57927 /* 120-headphones.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B74960D12440F9E00E57927 /* 120-headphones.png */; };
+		6B9BDB461253916100CFF466 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B9BDB451253916100CFF466 /* MainWindow.xib */; };
+		6BF6F44A12538C4800E1322B /* BlankScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF6F43F12538C4800E1322B /* BlankScreen.png */; };
+		6BF6F44B12538C4800E1322B /* listen-cmd-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF6F44012538C4800E1322B /* listen-cmd-icon.png */; };
+		6BF6F44C12538C4800E1322B /* listen-cmd-icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF6F44112538C4800E1322B /* listen-cmd-icon2.png */; };
+		6BF6F44D12538C4800E1322B /* shout-cmd-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF6F44212538C4800E1322B /* shout-cmd-icon.png */; };
+		6BF6F44E12538C4800E1322B /* ShoutScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF6F44312538C4800E1322B /* ShoutScreen.png */; };
+		6BF6F44F12538C4800E1322B /* SlalomShout57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF6F44412538C4800E1322B /* SlalomShout57x57.png */; };
+		6BF6F45012538C4800E1322B /* SlalomShout57x57trans.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF6F44512538C4800E1322B /* SlalomShout57x57trans.png */; };
+		6BF6F45112538C4800E1322B /* SlalomShout114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF6F44612538C4800E1322B /* SlalomShout114x114.png */; };
+		6BF6F45212538C4800E1322B /* SlalomShout114x114trans.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF6F44712538C4800E1322B /* SlalomShout114x114trans.png */; };
+		6BF6F45312538C4800E1322B /* SlalomShout512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF6F44812538C4800E1322B /* SlalomShout512x512.png */; };
+		6BF6F45412538C4800E1322B /* SlalomShout512x512trans.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF6F44912538C4800E1322B /* SlalomShout512x512trans.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +38,6 @@
 		1D6058910D05DD3D006BFB54 /* SlalomShout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlalomShout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* SlalomShout_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlalomShout_Prefix.pch; sourceTree = "<group>"; };
 		6B22F7D4124AB4FC00D68D31 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
@@ -43,9 +51,18 @@
 		6B22F7DC124AB4FC00D68D31 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		6B22F7DD124AB4FC00D68D31 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		6B22F7DE124AB4FC00D68D31 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		6B74960B12440F6E00E57927 /* 66-microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "66-microphone.png"; path = "../../../Downloads/glyphish-icons/icons/66-microphone.png"; sourceTree = SOURCE_ROOT; };
-		6B74960D12440F9E00E57927 /* 120-headphones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "120-headphones.png"; path = "../../../Downloads/glyphish-icons/icons/120-headphones.png"; sourceTree = SOURCE_ROOT; };
-		8D1107310486CEB800E47090 /* SlalomShout-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SlalomShout-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		6B9BDB451253916100CFF466 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		6BF6F43F12538C4800E1322B /* BlankScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlankScreen.png; sourceTree = "<group>"; };
+		6BF6F44012538C4800E1322B /* listen-cmd-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "listen-cmd-icon.png"; sourceTree = "<group>"; };
+		6BF6F44112538C4800E1322B /* listen-cmd-icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "listen-cmd-icon2.png"; sourceTree = "<group>"; };
+		6BF6F44212538C4800E1322B /* shout-cmd-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shout-cmd-icon.png"; sourceTree = "<group>"; };
+		6BF6F44312538C4800E1322B /* ShoutScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShoutScreen.png; sourceTree = "<group>"; };
+		6BF6F44412538C4800E1322B /* SlalomShout57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SlalomShout57x57.png; sourceTree = "<group>"; };
+		6BF6F44512538C4800E1322B /* SlalomShout57x57trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SlalomShout57x57trans.png; sourceTree = "<group>"; };
+		6BF6F44612538C4800E1322B /* SlalomShout114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SlalomShout114x114.png; sourceTree = "<group>"; };
+		6BF6F44712538C4800E1322B /* SlalomShout114x114trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SlalomShout114x114trans.png; sourceTree = "<group>"; };
+		6BF6F44812538C4800E1322B /* SlalomShout512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SlalomShout512x512.png; sourceTree = "<group>"; };
+		6BF6F44912538C4800E1322B /* SlalomShout512x512trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SlalomShout512x512trans.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,10 +121,18 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6B74960D12440F9E00E57927 /* 120-headphones.png */,
-				6B74960B12440F6E00E57927 /* 66-microphone.png */,
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
-				8D1107310486CEB800E47090 /* SlalomShout-Info.plist */,
+				6BF6F43F12538C4800E1322B /* BlankScreen.png */,
+				6BF6F44012538C4800E1322B /* listen-cmd-icon.png */,
+				6BF6F44112538C4800E1322B /* listen-cmd-icon2.png */,
+				6BF6F44212538C4800E1322B /* shout-cmd-icon.png */,
+				6BF6F44312538C4800E1322B /* ShoutScreen.png */,
+				6BF6F44412538C4800E1322B /* SlalomShout57x57.png */,
+				6B9BDB451253916100CFF466 /* MainWindow.xib */,
+				6BF6F44512538C4800E1322B /* SlalomShout57x57trans.png */,
+				6BF6F44612538C4800E1322B /* SlalomShout114x114.png */,
+				6BF6F44712538C4800E1322B /* SlalomShout114x114trans.png */,
+				6BF6F44812538C4800E1322B /* SlalomShout512x512.png */,
+				6BF6F44912538C4800E1322B /* SlalomShout512x512trans.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -189,9 +214,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
-				6B74960C12440F6E00E57927 /* 66-microphone.png in Resources */,
-				6B74960E12440F9E00E57927 /* 120-headphones.png in Resources */,
+				6BF6F44A12538C4800E1322B /* BlankScreen.png in Resources */,
+				6BF6F44B12538C4800E1322B /* listen-cmd-icon.png in Resources */,
+				6BF6F44C12538C4800E1322B /* listen-cmd-icon2.png in Resources */,
+				6BF6F44D12538C4800E1322B /* shout-cmd-icon.png in Resources */,
+				6BF6F44E12538C4800E1322B /* ShoutScreen.png in Resources */,
+				6BF6F44F12538C4800E1322B /* SlalomShout57x57.png in Resources */,
+				6BF6F45012538C4800E1322B /* SlalomShout57x57trans.png in Resources */,
+				6BF6F45112538C4800E1322B /* SlalomShout114x114.png in Resources */,
+				6BF6F45212538C4800E1322B /* SlalomShout114x114trans.png in Resources */,
+				6BF6F45312538C4800E1322B /* SlalomShout512x512.png in Resources */,
+				6BF6F45412538C4800E1322B /* SlalomShout512x512trans.png in Resources */,
+				6B9BDB461253916100CFF466 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

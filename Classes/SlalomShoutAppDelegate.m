@@ -15,6 +15,7 @@
 @synthesize userName;
 @synthesize userNameField;
 @synthesize userNameLabel;
+@synthesize errorLabel;
 @synthesize tabBarController;
 
 #pragma mark -
@@ -26,7 +27,7 @@
 	
 	NSString *urlString = 
 	//[NSString stringWithFormat: @"http://www.edsiok.com/secure/test.json"];
-	[NSString stringWithFormat:@"http://kata.slalomdemo.com:60577/UserMessageService.asmx/GetTagList"];
+	[NSString stringWithFormat:@"http://kata.slalomdemo.com:60577/UserMessageService.asmx/ValidateUser"];
 
 	NSURL *url = [NSURL URLWithString:urlString];
 	NSString *authHeader = @"Basic d2VidXNlcjpQYXNzQHdvcmQh"; 
@@ -36,13 +37,18 @@
 	[request addValue:authHeader forHTTPHeaderField:@"Authorization"]; 
 	[request addValue:@"application/json" forHTTPHeaderField:@"Accept"]; 
 	[request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-	//[request setHTTPBody: [[[NSString alloc] initWithString: @"winUserId=jimb"] 
-	//					   dataUsingEncoding: NSASCIIStringEncoding]];
+
+	NSMutableDictionary *jsonObject = [NSMutableDictionary dictionary];
+	[jsonObject setObject:userNameField.text forKey:@"userId"];
+	NSString *jsonString = jsonObject.JSONRepresentation;
+	
+	NSLog(jsonString);
+	
+	[request setHTTPBody: [jsonString dataUsingEncoding: NSASCIIStringEncoding]];
 	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 	[connection release];
 	[request release];
 	
-	[window addSubview: [tabBarController view]];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data 
@@ -50,16 +56,19 @@
 	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	NSLog(jsonString);
 	NSDictionary *results = [jsonString JSONValue];
-	NSArray *array = [results objectForKey:@"d"];
-	for (NSDictionary *val in array)
+	NSNumber *val = [results objectForKey:@"d"];
+	if([val intValue] == 1)
 	{
-		NSLog(@"%@ %@", [val objectForKey:@"TagID"], [val objectForKey:@"TagText"]);
+		NSLog(@"are you registered?%@", [val stringValue]);
+		errorLabel.text=@"";
+		[window addSubview: [tabBarController view]];
 	}
-	 
-	 //only for ed's server
-	//NSString *result = [results objectForKey:@"result"];
-	
-	//NSLog(result);
+	else 
+	{
+		NSLog(@"test are you registered?%@", [val stringValue]);
+		userNameField.text = @"";
+		errorLabel.text = @"User does not exist!";
+	}
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
