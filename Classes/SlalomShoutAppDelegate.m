@@ -26,7 +26,8 @@
 	
 	NSString *urlString = 
 	//[NSString stringWithFormat: @"http://www.edsiok.com/secure/test.json"];
-	[NSString stringWithFormat:@"http://kata.slalomdemo.com:60577/UserMessageService.asmx/PingDB"];
+	[NSString stringWithFormat:@"http://kata.slalomdemo.com:60577/UserMessageService.asmx/GetTagList"];
+
 	NSURL *url = [NSURL URLWithString:urlString];
 	NSString *authHeader = @"Basic d2VidXNlcjpQYXNzQHdvcmQh"; 
 	//NSString *authHeader = @"Basic dGVzdDp0ZXN0MTIz"; //ed's stupud server
@@ -35,6 +36,8 @@
 	[request addValue:authHeader forHTTPHeaderField:@"Authorization"]; 
 	[request addValue:@"application/json" forHTTPHeaderField:@"Accept"]; 
 	[request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+	//[request setHTTPBody: [[[NSString alloc] initWithString: @"winUserId=jimb"] 
+	//					   dataUsingEncoding: NSASCIIStringEncoding]];
 	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 	[connection release];
 	[request release];
@@ -47,7 +50,13 @@
 	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	NSLog(jsonString);
 	NSDictionary *results = [jsonString JSONValue];
-	//only for ed's server
+	NSArray *array = [results objectForKey:@"d"];
+	for (NSDictionary *val in array)
+	{
+		NSLog(@"%@ %@", [val objectForKey:@"TagID"], [val objectForKey:@"TagText"]);
+	}
+	 
+	 //only for ed's server
 	//NSString *result = [results objectForKey:@"result"];
 	
 	//NSLog(result);
