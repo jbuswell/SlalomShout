@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Login.h"
 
 @interface SlalomShoutAppDelegate : NSObject <UIApplicationDelegate> {
     IBOutlet UIWindow *window;

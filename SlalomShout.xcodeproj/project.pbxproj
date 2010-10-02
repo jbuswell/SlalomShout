@@ -17,6 +17,11 @@
 		6B22F7E1124AB4FC00D68D31 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B22F7DA124AB4FC00D68D31 /* SBJsonBase.m */; };
 		6B22F7E2124AB4FC00D68D31 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B22F7DC124AB4FC00D68D31 /* SBJsonParser.m */; };
 		6B22F7E3124AB4FC00D68D31 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B22F7DE124AB4FC00D68D31 /* SBJsonWriter.m */; };
+		6B38E94312569D4F00A3BEF4 /* ViewShoutsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B38E94212569D4F00A3BEF4 /* ViewShoutsController.m */; };
+		6B38E9501256A0B100A3BEF4 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B38E94F1256A0B100A3BEF4 /* Login.m */; };
+		6B38E9CE125799AE00A3BEF4 /* GetMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B38E9CD125799AE00A3BEF4 /* GetMessages.m */; };
+		6B38EA3E1257ACA700A3BEF4 /* CreateShoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B38EA3D1257ACA700A3BEF4 /* CreateShoutController.m */; };
+		6B38EA791257B87C00A3BEF4 /* Shout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B38EA781257B87C00A3BEF4 /* Shout.m */; };
 		6B9BDB461253916100CFF466 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B9BDB451253916100CFF466 /* MainWindow.xib */; };
 		6BF6F44A12538C4800E1322B /* BlankScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF6F43F12538C4800E1322B /* BlankScreen.png */; };
 		6BF6F44B12538C4800E1322B /* listen-cmd-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF6F44012538C4800E1322B /* listen-cmd-icon.png */; };
@@ -51,6 +56,16 @@
 		6B22F7DC124AB4FC00D68D31 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		6B22F7DD124AB4FC00D68D31 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		6B22F7DE124AB4FC00D68D31 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		6B38E94112569D4F00A3BEF4 /* ViewShoutsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewShoutsController.h; sourceTree = "<group>"; };
+		6B38E94212569D4F00A3BEF4 /* ViewShoutsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewShoutsController.m; sourceTree = "<group>"; };
+		6B38E94E1256A0B100A3BEF4 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
+		6B38E94F1256A0B100A3BEF4 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
+		6B38E9CC125799AE00A3BEF4 /* GetMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetMessages.h; sourceTree = "<group>"; };
+		6B38E9CD125799AE00A3BEF4 /* GetMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetMessages.m; sourceTree = "<group>"; };
+		6B38EA3C1257ACA700A3BEF4 /* CreateShoutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateShoutController.h; sourceTree = "<group>"; };
+		6B38EA3D1257ACA700A3BEF4 /* CreateShoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateShoutController.m; sourceTree = "<group>"; };
+		6B38EA771257B87C00A3BEF4 /* Shout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shout.h; sourceTree = "<group>"; };
+		6B38EA781257B87C00A3BEF4 /* Shout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shout.m; sourceTree = "<group>"; };
 		6B9BDB451253916100CFF466 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		6BF6F43F12538C4800E1322B /* BlankScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlankScreen.png; sourceTree = "<group>"; };
 		6BF6F44012538C4800E1322B /* listen-cmd-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "listen-cmd-icon.png"; sourceTree = "<group>"; };
@@ -85,6 +100,16 @@
 				6B22F7D3124AB4FC00D68D31 /* JSON */,
 				1D3623240D0F684500981E51 /* SlalomShoutAppDelegate.h */,
 				1D3623250D0F684500981E51 /* SlalomShoutAppDelegate.m */,
+				6B38E94112569D4F00A3BEF4 /* ViewShoutsController.h */,
+				6B38E94212569D4F00A3BEF4 /* ViewShoutsController.m */,
+				6B38E94E1256A0B100A3BEF4 /* Login.h */,
+				6B38E94F1256A0B100A3BEF4 /* Login.m */,
+				6B38E9CC125799AE00A3BEF4 /* GetMessages.h */,
+				6B38E9CD125799AE00A3BEF4 /* GetMessages.m */,
+				6B38EA3C1257ACA700A3BEF4 /* CreateShoutController.h */,
+				6B38EA3D1257ACA700A3BEF4 /* CreateShoutController.m */,
+				6B38EA771257B87C00A3BEF4 /* Shout.h */,
+				6B38EA781257B87C00A3BEF4 /* Shout.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -243,6 +268,11 @@
 				6B22F7E1124AB4FC00D68D31 /* SBJsonBase.m in Sources */,
 				6B22F7E2124AB4FC00D68D31 /* SBJsonParser.m in Sources */,
 				6B22F7E3124AB4FC00D68D31 /* SBJsonWriter.m in Sources */,
+				6B38E94312569D4F00A3BEF4 /* ViewShoutsController.m in Sources */,
+				6B38E9501256A0B100A3BEF4 /* Login.m in Sources */,
+				6B38E9CE125799AE00A3BEF4 /* GetMessages.m in Sources */,
+				6B38EA3E1257ACA700A3BEF4 /* CreateShoutController.m in Sources */,
+				6B38EA791257B87C00A3BEF4 /* Shout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "SlalomShoutAppDelegate.h"
 #import "JSON/JSON.h"
+#import "Login.h"
 
 @implementation SlalomShoutAppDelegate
 
@@ -26,12 +27,10 @@
 	userNameLabel.text = self.userName;
 	
 	NSString *urlString = 
-	//[NSString stringWithFormat: @"http://www.edsiok.com/secure/test.json"];
-	[NSString stringWithFormat:@"http://kata.slalomdemo.com:60577/UserMessageService.asmx/ValidateUser"];
+		[NSString stringWithFormat:@"http://kata.slalomdemo.com:60577/UserMessageService.asmx/ValidateUser"];
 
 	NSURL *url = [NSURL URLWithString:urlString];
 	NSString *authHeader = @"Basic d2VidXNlcjpQYXNzQHdvcmQh"; 
-	//NSString *authHeader = @"Basic dGVzdDp0ZXN0MTIz"; //ed's stupud server
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: url];
 	[request setHTTPMethod:@"POST"]; 
 	[request addValue:authHeader forHTTPHeaderField:@"Authorization"]; 
@@ -45,31 +44,11 @@
 	NSLog(jsonString);
 	
 	[request setHTTPBody: [jsonString dataUsingEncoding: NSASCIIStringEncoding]];
-	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:[[Login alloc] init]];
 	[connection release];
 	[request release];
-	
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data 
-{
-	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-	NSLog(jsonString);
-	NSDictionary *results = [jsonString JSONValue];
-	NSNumber *val = [results objectForKey:@"d"];
-	if([val intValue] == 1)
-	{
-		NSLog(@"are you registered?%@", [val stringValue]);
-		errorLabel.text=@"";
-		[window addSubview: [tabBarController view]];
-	}
-	else 
-	{
-		NSLog(@"test are you registered?%@", [val stringValue]);
-		userNameField.text = @"";
-		errorLabel.text = @"User does not exist!";
-	}
-}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
     if (theTextField == userNameField) {
