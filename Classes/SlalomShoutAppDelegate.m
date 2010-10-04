@@ -63,6 +63,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
+	self.messages = [[NSMutableArray alloc] init];	
 	[[[GetMessages alloc] init] populateMessages];
     [window makeKeyAndVisible];
 	

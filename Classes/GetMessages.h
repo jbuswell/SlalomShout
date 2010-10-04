@@ -10,7 +10,10 @@
 
 
 @interface GetMessages : NSObject {
+	NSMutableData *responseData;
 }
+
+@property(nonatomic, retain) NSMutableData *responseData;
 
 - (void)populateMessages;
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data ;

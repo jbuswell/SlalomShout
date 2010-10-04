@@ -13,6 +13,13 @@
 
 @implementation GetMessages
 
+@synthesize responseData;
+
+-(id)init
+{
+	responseData = [[NSMutableData data] retain];
+	return self;
+}
 
 - (void)populateMessages
 {
@@ -45,31 +52,39 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data 
 {
-	//NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-	//NSLog(jsonString);
-	//NSArray *results = [jsonString JSONValue];
-	//NSDictionary *val = [results objectForKey:@"d"];
-	/*for (NSDictionary *d in val) {
-		NSString *text = [d objectForKey:@"ShortText"];
-		NSLog(text);
-	}*/
-	Shout *shout = [[Shout alloc] init];
-	[shout setMessage:@"test"];
-	[shout setUser:@"jimb"];
-	
-	SlalomShoutAppDelegate *delegate = (SlalomShoutAppDelegate *)[[UIApplication sharedApplication] delegate];
-	delegate.messages = [[NSMutableArray alloc] initWithObjects:shout, nil];									
-	//NSMutableArray *messages = [(SlalomShoutAppDelegate *)[[UIApplication sharedApplication] delegate] messages];
-	
-	[shout release];
-	/*UIWindow *window = [(SlalomShoutAppDelegate *)[[UIApplication sharedApplication] delegate] window];
-	UITabBarController *tabBarController = [(SlalomShoutAppDelegate *)[[UIApplication sharedApplication] delegate] tabBarController];	
-	
-	[shout release];
-	
-	[window addSubview: [tabBarController view]];
-	[tabBarController release];
-	[window release];
+	[responseData appendData: data];
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+	NSString *jsonString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+	NSLog(jsonString);
+	/*
+	 jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\\/" withString:@""];
+	jsonString = [jsonString stringByReplacingOccurrencesOfString:@"Date(" withString:@""];
+	jsonString = [jsonString stringByReplacingOccurrencesOfString:@")" withString:@""];
+	NSLog(jsonString);
 	 */
+	SlalomShoutAppDelegate *delegate = (SlalomShoutAppDelegate *)[[UIApplication sharedApplication] delegate];
+	//delegate.messages = [[NSMutableArray alloc] initWithObjects:shout, nil];									
+	NSMutableArray *messages = [(SlalomShoutAppDelegate *)[[UIApplication sharedApplication] delegate] messages];
+	
+	NSDictionary *results = [jsonString JSONValue];
+	NSArray *val = [results objectForKey:@"d"];
+	for(NSDictionary *d in val)
+	{
+		NSDictionary *user = [d objectForKey:@"CDUser"];
+		NSString *userName = [user objectForKey:@"FirstName"];
+		NSString *text = [d objectForKey:@"ShortText"];
+		Shout *shout =[[Shout alloc] initWithUser:userName message:text];
+		[messages addObject:shout];
+		/*[text release];
+		[userName release];
+		[text release];
+		[shout release];*/
+	}
+	//[val release];
+	//[results release];
+	//[jsonString release];
 }
 @end
