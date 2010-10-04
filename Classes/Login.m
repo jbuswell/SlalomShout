@@ -8,6 +8,7 @@
 
 #import "Login.h"
 #import "SlalomShoutAppDelegate.h"
+#import "GetMessages.h"
 
 @implementation Login
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data 

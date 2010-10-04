@@ -17,6 +17,7 @@
 	IBOutlet UILabel *errorLabel;
 	NSMutableData *responseData;
 	NSString *userName;
+	NSMutableArray *messages;	
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -26,6 +27,8 @@
 @property (nonatomic, retain) NSString *userName;
 @property (nonatomic, retain) NSMutableData *responseData;
 @property (nonatomic, retain) IBOutlet UILabel *errorLabel;
+@property(nonatomic, retain) NSMutableArray *messages;
+
 - (IBAction)login:(id)sender; 
 
 @end

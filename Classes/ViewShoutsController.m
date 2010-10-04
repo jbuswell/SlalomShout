@@ -14,7 +14,6 @@
 
 @implementation ViewShoutsController
 
-@synthesize messages;
 
 #pragma mark -
 #pragma mark Initialization
@@ -35,11 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-	GetMessages *getMessages = [[GetMessages alloc] initWithShouts: messages];
-	[getMessages populateMessages];
-	[getMessages release];
-	
+	self.title=@"Shouts";
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -85,6 +80,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
+	NSMutableArray *messages = [(SlalomShoutAppDelegate *)[[UIApplication sharedApplication] delegate] messages];
     return [messages count];
 }
 
@@ -98,12 +94,13 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
+	
+	NSMutableArray *messages = [(SlalomShoutAppDelegate *)[[UIApplication sharedApplication] delegate] messages];
 	if([messages count] > 0)
 	{
-		Shout *shout = [messages objectAtIndex: 0];
-		cell.textLabel.text = [shout message];
-		[shout release];
-    }
+		Shout *shout = (Shout *)[messages objectAtIndex:indexPath.row];
+		[cell setText: shout.message];
+	}
     return cell;
 }
 

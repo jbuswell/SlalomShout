@@ -17,4 +17,6 @@
 @property(nonatomic, retain) NSString *message;
 @property(nonatomic, retain) NSString *user;
 
+-(id)initWithUser: (NSString *)usr message:(NSString *) msg;
+
 @end

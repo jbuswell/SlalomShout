@@ -10,10 +10,7 @@
 
 
 @interface GetMessages : NSObject {
-	NSMutableArray *shouts;
 }
-
-@property(nonatomic, retain) NSMutableArray *shouts;
 
 - (void)populateMessages;
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data ;

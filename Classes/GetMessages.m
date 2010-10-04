@@ -13,17 +13,6 @@
 
 @implementation GetMessages
 
-@synthesize shouts;
-
--(GetMessages*) initWithShouts: (NSArray *) shouts {
-    self = [super init];
-	
-    if ( self ) {
-        [self setShouts: shouts];
-    }
-	
-    return self;
-}
 
 - (void)populateMessages
 {
@@ -56,10 +45,10 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data 
 {
-	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-	NSLog(jsonString);
-	NSArray *results = [jsonString JSONValue];
-	NSDictionary *val = [results objectForKey:@"d"];
+	//NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	//NSLog(jsonString);
+	//NSArray *results = [jsonString JSONValue];
+	//NSDictionary *val = [results objectForKey:@"d"];
 	/*for (NSDictionary *d in val) {
 		NSString *text = [d objectForKey:@"ShortText"];
 		NSLog(text);
@@ -67,11 +56,20 @@
 	Shout *shout = [[Shout alloc] init];
 	[shout setMessage:@"test"];
 	[shout setUser:@"jimb"];
-	[shouts addObject:shout];
-	//UIWindow *window = [(SlalomShoutAppDelegate *)[[UIApplication sharedApplication] delegate] window];
-	//UITabBarController *tabBarController = [(SlalomShoutAppDelegate *)[[UIApplication sharedApplication] delegate] tabBarController];	
-	//[window addSubview: [tabBarController view]];
-	//[tabBarController release];
-	//[window release];
+	
+	SlalomShoutAppDelegate *delegate = (SlalomShoutAppDelegate *)[[UIApplication sharedApplication] delegate];
+	delegate.messages = [[NSMutableArray alloc] initWithObjects:shout, nil];									
+	//NSMutableArray *messages = [(SlalomShoutAppDelegate *)[[UIApplication sharedApplication] delegate] messages];
+	
+	[shout release];
+	/*UIWindow *window = [(SlalomShoutAppDelegate *)[[UIApplication sharedApplication] delegate] window];
+	UITabBarController *tabBarController = [(SlalomShoutAppDelegate *)[[UIApplication sharedApplication] delegate] tabBarController];	
+	
+	[shout release];
+	
+	[window addSubview: [tabBarController view]];
+	[tabBarController release];
+	[window release];
+	 */
 }
 @end

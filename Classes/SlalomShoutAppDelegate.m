@@ -9,6 +9,8 @@
 #import "SlalomShoutAppDelegate.h"
 #import "JSON/JSON.h"
 #import "Login.h"
+#import "GetMessages.h"
+
 
 @implementation SlalomShoutAppDelegate
 
@@ -18,6 +20,7 @@
 @synthesize userNameLabel;
 @synthesize errorLabel;
 @synthesize tabBarController;
+@synthesize messages;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -60,7 +63,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
-	
+	[[[GetMessages alloc] init] populateMessages];
     [window makeKeyAndVisible];
 	
 	return YES;

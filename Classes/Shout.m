@@ -14,4 +14,10 @@
 @synthesize user;
 @synthesize message;
 
+-(id)initWithUser: (NSString *)usr message:(NSString *) msg {
+	self.user = usr;
+	self.message = msg;
+	return self;
+}
+
 @end
