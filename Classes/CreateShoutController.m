@@ -61,19 +61,7 @@
 	NSLog(jsonString);
 	NSDictionary *results = [jsonString JSONValue];
 	label.text = @"Shout saved.";
-	/*NSNumber *val = [results objectForKey:@"d"];
-	 if([val intValue] == 1)
-	 {
-	 NSLog(@"are you registered?%@", [val stringValue]);
-	 errorLabel.text=@"";
-	 [window addSubview: [tabBarController view]];
-	 }
-	 else 
-	 {
-	 NSLog(@"test are you registered?%@", [val stringValue]);
-	 userNameField.text = @"";
-	 errorLabel.text = @"User does not exist!";
-	 }*/
+	[textField resignFirstResponder];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {

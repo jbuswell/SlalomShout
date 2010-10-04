@@ -10,9 +10,9 @@
 
 
 @interface ViewShoutsController : UITableViewController {
-	NSArray *messages;	
+	NSMutableArray *messages;	
 }
 
-@property(nonatomic, retain) NSArray *messages;
+@property(nonatomic, retain) NSMutableArray *messages;
 
 @end

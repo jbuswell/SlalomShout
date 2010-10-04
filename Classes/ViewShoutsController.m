@@ -10,9 +10,11 @@
 #import "GetMessages.h"
 #import "JSON/JSON.h"
 #import "SlalomShoutAppDelegate.h"
+#import "Shout.h"
 
 @implementation ViewShoutsController
 
+@synthesize messages;
 
 #pragma mark -
 #pragma mark Initialization
@@ -33,7 +35,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	GetMessages *getMessages = [[GetMessages alloc] init];
+	
+	GetMessages *getMessages = [[GetMessages alloc] initWithShouts: messages];
 	[getMessages populateMessages];
 	[getMessages release];
 	
@@ -82,7 +85,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 1;
+    return [messages count];
 }
 
 
@@ -95,9 +98,12 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    
-    cell.textLabel.text = @"ed";
-    
+	if([messages count] > 0)
+	{
+		Shout *shout = [messages objectAtIndex: 0];
+		cell.textLabel.text = [shout message];
+		[shout release];
+    }
     return cell;
 }
 
